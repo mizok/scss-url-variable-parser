@@ -7,13 +7,13 @@ import 'webpack-dev-server'; // dont remove this import, it's for webpack-dev-se
 const COMPRESS = true;
 
 
-const pageEntries: webpack.EntryObject = { main: ['./src/ts/main.ts'] }
+const entries: webpack.EntryObject = { main: ['./src/ts/main.ts'] }
 //generate htmlWebpackPlugin instances
 
 
 const config = (env: any, argv: any): webpack.Configuration => {
   const configObj: webpack.Configuration = {
-    entry: pageEntries,
+    entry: entries,
     output: {
       filename: 'js/[name].[chunkhash].js',
       chunkFilename: '[id].[chunkhash].js',
@@ -49,7 +49,14 @@ const config = (env: any, argv: any): webpack.Configuration => {
       extensions: ['.ts', '.tsx', '.js', '.jsx', 'json'],
       alias: {
         '@img': resolve(__dirname, './src/assets/images/'),
-      }
+      },
+      fallback: {
+        "fs":false,
+        "url":require.resolve("url/"),
+        "util":require.resolve("util/"),
+        "path":require.resolve("path-browserify")
+
+      },
     },
     optimization: {
       minimize: COMPRESS,
