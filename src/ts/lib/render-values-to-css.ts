@@ -32,7 +32,7 @@ export default function renderValuesToCSS(
     process.chdir(cwd);
   }
 
-  const constructedSass = [sass, separator, evaluationSass].join('\n');
+  const constructedSass = [sass, evaluationSass].join('\n');
 
   const css = SASS
     .renderSync({
@@ -41,5 +41,5 @@ export default function renderValuesToCSS(
     })
     .css.toString();
 
-  return last(css.split(separator));
+  return css;
 }

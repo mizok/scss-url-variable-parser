@@ -1,4 +1,4 @@
-import { camelCase, forEach, mapKeys } from 'lodash';
+import { snakeCase, forEach, mapKeys } from 'lodash';
 
 interface AnyObject {
   [key: string]: any;
@@ -25,11 +25,11 @@ export function generateId(): string {
     .slice(-8);
 }
 
-export function camelizeDeep<T = object>(object: T): T {
-  const newObj = mapKeys(object as AnyObject, (__, key) => camelCase(key));
+export function formatDeep<T = object>(object: T): T {
+  const newObj = mapKeys(object as AnyObject, (__, key) => snakeCase(key).toUpperCase());
   forEach(newObj, (value, key) => {
     if (typeof value === 'object') {
-      newObj[key] = camelizeDeep(value);
+      newObj[key] = formatDeep(value);
     }
   });
   return newObj as T;
