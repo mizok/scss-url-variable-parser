@@ -54,8 +54,16 @@ const config = (env: any, argv: any): webpack.Configuration => {
         "fs":false,
         "url":require.resolve("url/"),
         "util":require.resolve("util/"),
-        "path":require.resolve("path-browserify")
-
+        "path":require.resolve("path-browserify"),
+        "async_hooks": false,
+        "buffer":false,
+        "net":false,
+        "crypto": false,
+        "stream": require.resolve('stream-browserify'),
+        "zlib": require.resolve('browserify-zlib'),
+        "assert": require.resolve("assert"),
+        "http": require.resolve('stream-http'),
+        "https": require.resolve('https-browserify'),
       },
     },
     optimization: {
