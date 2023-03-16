@@ -37,8 +37,7 @@ export default function renderValuesToCSS(
   const css = SASS
     .renderSync({
       data: constructedSass,
-      indentedSyntax: Boolean(indented),
-      outputStyle: 'compact'
+      indentedSyntax: Boolean(indented)
     })
     .css.toString();
 
