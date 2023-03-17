@@ -1,0 +1,61 @@
+@import 'util/main';
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content{
+  flex:1;
+  background-color: rgb(172, 172, 172);
+  padding: 30px;
+  textarea{
+    border: 3px solid #000;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  button{
+    display: flex;
+    padding: 10px;
+    border-radius: 20px;
+    align-items: center;
+    border:3px solid #000;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+    cursor: pointer;
+    img{
+      width: 20px;
+      flex:none;
+      margin-left: 10px;
+    }
+  }
+}
+
+header{
+  padding: 20px 0;
+  background-color: #333;
+  flex:none;
+  text-align: center;
+  p{
+    font-size: 16px;
+    color:white;
+  }
+}
+
+footer{
+  padding: 20px 0;
+  background-color: #333;
+  flex:none;
+}
+
+
+
