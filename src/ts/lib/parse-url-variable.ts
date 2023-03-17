@@ -93,7 +93,7 @@ export  function parseUrlVariable(
 	const match = val.match(urlRegex); // 執行檢查
 	if (match) {
 	const extracted = match[1]; // 取得匹配的部分
-	classPropertyContent+=`    ${key}:${extracted};\n`
+	classPropertyContent+=`    ${key}=${extracted};\n`
 	} 
   })
 
