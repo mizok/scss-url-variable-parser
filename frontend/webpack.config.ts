@@ -39,7 +39,7 @@ const getEntriesByParsingTemplateNames = (templatesFolderName:string, atRoot = t
   return entryObj;
 }
 
-const getTemaplteInstancesByParsingTemplateNames = (templatesFolderName, atRoot = true) => {
+const getTemaplteInstancesByParsingTemplateNames = (templatesFolderName:string, atRoot = true) => {
   const forderPath = resolve(__dirname, `./src/${templatesFolderName}`);
   return fs.readdirSync(forderPath).map((fullFileName: string) => {
     const templateRegx = /(.*)(\.)(ejs|html)/g;
