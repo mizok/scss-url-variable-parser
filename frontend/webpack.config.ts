@@ -9,7 +9,7 @@ import 'webpack-dev-server'; // dont remove this import, it's for webpack-dev-se
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 const COMPRESS = true;
 
-const getEntriesByParsingTemplateNames = (templatesFolderName, atRoot = true) => {
+const getEntriesByParsingTemplateNames = (templatesFolderName:string, atRoot = true) => {
   const folderPath = resolve(__dirname, `./src/${templatesFolderName}`);
   const entryObj: webpack.EntryObject = {};
   const templateRegx = /(.*)(\.)(ejs|html)/g;
