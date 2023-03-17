@@ -98,6 +98,9 @@ export  function parseUrlVariable(
   })
 
   const classStr = `
+@Injectable({
+  provideIn:'root'
+})
 class ImageLink {
 
 ${classPropertyContent}
