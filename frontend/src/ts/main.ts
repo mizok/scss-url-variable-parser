@@ -6,7 +6,7 @@ function main(){
         let output;
         const t1Val = textarea1.value;
         
-        await fetch('https://scss-url-variable-parser.onrender.com:3000/convert', {
+        await fetch('http://localhost:3000/convert', {
             method: 'POST',
             body: t1Val,
             headers: {
