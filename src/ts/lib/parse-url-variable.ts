@@ -99,9 +99,9 @@ export  function parseUrlVariable(
 
   const classStr = `
 @Injectable({
-  provideIn:'root'
+  providedIn:'root'
 })
-class ImageLink {
+export class ImageLink extends DefaultIconLink{
 
 ${classPropertyContent}
 
